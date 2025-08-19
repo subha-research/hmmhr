@@ -2,7 +2,7 @@ import frappe
 
 
 def execute():
-	frappe.reload_doc("hmmhr", "doctype", "employee_advance")
+	frappe.reload_doc("hr", "doctype", "employee_advance")
 
 	advance = frappe.qb.DocType("Employee Advance")
 	(

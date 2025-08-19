@@ -6,13 +6,13 @@ import frappe
 from frappe import _
 from frappe.query_builder.functions import Extract
 
-import svasamm_erp
+import hmmerp
 
 Filters = frappe._dict
 
 
 def execute(filters: Filters = None) -> tuple:
-	is_indian_company = svasamm_erp.get_region(filters.get("company")) == "India"
+	is_indian_company = hmmerp.get_region(filters.get("company")) == "India"
 	columns = get_columns(is_indian_company)
 	data = get_data(filters, is_indian_company)
 

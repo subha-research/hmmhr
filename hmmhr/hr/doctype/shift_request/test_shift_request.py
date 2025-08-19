@@ -5,7 +5,7 @@ import frappe
 from frappe.tests import change_settings
 from frappe.utils import add_days, nowdate
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.shift_request.shift_request import OverlappingShiftRequestError
 from hmmhr.hr.doctype.shift_type.test_shift_type import setup_shift_type

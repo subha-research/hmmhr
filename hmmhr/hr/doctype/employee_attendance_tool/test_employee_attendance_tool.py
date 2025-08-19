@@ -5,7 +5,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, getdate
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.attendance.attendance import mark_attendance
 from hmmhr.hr.doctype.employee_attendance_tool.employee_attendance_tool import (

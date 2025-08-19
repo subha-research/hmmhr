@@ -20,8 +20,8 @@ from frappe.utils import (
 	nowdate,
 )
 
-from svasamm_erp.buying.doctype.supplier_scorecard.supplier_scorecard import daterange
-from svasamm_erp.setup.doctype.employee.employee import get_holiday_list_for_employee
+from hmmerp.buying.doctype.supplier_scorecard.supplier_scorecard import daterange
+from hmmerp.setup.doctype.employee.employee import get_holiday_list_for_employee
 
 import hmmhr
 from hmmhr.api import get_current_employee_info

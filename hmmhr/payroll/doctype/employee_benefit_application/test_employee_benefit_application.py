@@ -5,8 +5,8 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, date_diff, get_year_ending, get_year_start, getdate
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
-from svasamm_erp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from hmmerp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hmmhr.hr.utils import get_holiday_dates_for_employee
 from hmmhr.payroll.doctype.employee_benefit_application.employee_benefit_application import (

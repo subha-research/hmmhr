@@ -4,7 +4,7 @@
 import frappe
 from frappe.utils.data import add_to_date, today
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.leave_ledger_entry.leave_ledger_entry import expire_allocation
 from hmmhr.tests.utils import HRMSTestSuite

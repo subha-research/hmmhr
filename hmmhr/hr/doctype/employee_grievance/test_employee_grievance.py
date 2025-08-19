@@ -5,7 +5,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import today
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 
 class TestEmployeeGrievance(IntegrationTestCase):

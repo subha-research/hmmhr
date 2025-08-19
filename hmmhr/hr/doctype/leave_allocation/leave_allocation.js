@@ -13,7 +13,7 @@ frappe.ui.form.on("Leave Allocation", {
 
 		frm.set_query("employee", function () {
 			return {
-				query: "svasamm_erp.controllers.queries.employee_query",
+				query: "hmmerp.controllers.queries.employee_query",
 			};
 		});
 		frm.set_query("leave_type", function () {

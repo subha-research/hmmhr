@@ -4,9 +4,9 @@
 import frappe
 from frappe.utils import flt, nowdate, random_string
 
-from svasamm_erp.accounts.doctype.account.test_account import create_account
-from svasamm_erp.accounts.doctype.payment_entry.test_payment_entry import get_payment_entry
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.accounts.doctype.account.test_account import create_account
+from hmmerp.accounts.doctype.payment_entry.test_payment_entry import get_payment_entry
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.expense_claim.expense_claim import (
 	MismatchError,
@@ -490,13 +490,13 @@ class TestExpenseClaim(HRMSTestSuite):
 		self.assertEqual(expense_claim.total_amount_reimbursed, 5500)
 
 	def test_expense_claim_against_delivery_trip(self):
-		from svasamm_erp.stock.doctype.delivery_trip.test_delivery_trip import (
+		from hmmerp.stock.doctype.delivery_trip.test_delivery_trip import (
 			create_address,
 			create_delivery_trip,
 			create_driver,
 			create_vehicle,
 		)
-		from svasamm_erp.tests.utils import create_test_contact_and_address
+		from hmmerp.tests.utils import create_test_contact_and_address
 
 		driver = create_driver()
 		create_vehicle()

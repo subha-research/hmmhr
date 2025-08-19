@@ -2,9 +2,9 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, getdate
 
-from svasamm_erp.projects.doctype.timesheet.test_timesheet import make_timesheet
-from svasamm_erp.projects.doctype.timesheet.timesheet import make_sales_invoice
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.projects.doctype.timesheet.test_timesheet import make_timesheet
+from hmmerp.projects.doctype.timesheet.timesheet import make_sales_invoice
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.report.project_profitability.project_profitability import execute
 from hmmhr.payroll.doctype.salary_slip.salary_slip import make_salary_slip_from_timesheet

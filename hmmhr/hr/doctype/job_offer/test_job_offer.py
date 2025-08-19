@@ -5,7 +5,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, nowdate
 
-from svasamm_erp.setup.doctype.designation.test_designation import create_designation
+from hmmerp.setup.doctype.designation.test_designation import create_designation
 
 from hmmhr.hr.doctype.job_applicant.job_applicant import get_applicant_to_hire_percentage
 from hmmhr.hr.doctype.job_offer.job_offer import get_offer_acceptance_rate

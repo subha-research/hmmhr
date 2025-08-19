@@ -9,13 +9,13 @@ from frappe.model.workflow import get_workflow_name
 from frappe.query_builder.functions import Sum
 from frappe.utils import cstr, flt, get_link_to_form
 
-import svasamm_erp
-from svasamm_erp.accounts.doctype.repost_accounting_ledger.repost_accounting_ledger import (
+import hmmerp
+from hmmerp.accounts.doctype.repost_accounting_ledger.repost_accounting_ledger import (
 	validate_docs_for_voucher_types,
 )
-from svasamm_erp.accounts.doctype.sales_invoice.sales_invoice import get_bank_cash_account
-from svasamm_erp.accounts.general_ledger import make_gl_entries
-from svasamm_erp.controllers.accounts_controller import AccountsController
+from hmmerp.accounts.doctype.sales_invoice.sales_invoice import get_bank_cash_account
+from hmmerp.accounts.general_ledger import make_gl_entries
+from hmmerp.controllers.accounts_controller import AccountsController
 
 import hmmhr
 from hmmhr.hr.utils import set_employee_name, share_doc_with_approver, validate_active_employee
@@ -464,7 +464,7 @@ def get_outstanding_amount_for_claim(claim):
 
 @frappe.whitelist()
 def make_bank_entry(dt, dn):
-	from svasamm_erp.accounts.doctype.journal_entry.journal_entry import get_default_bank_cash_account
+	from hmmerp.accounts.doctype.journal_entry.journal_entry import get_default_bank_cash_account
 
 	expense_claim = frappe.get_doc(dt, dn)
 	default_bank_cash_account = get_default_bank_cash_account(expense_claim.company, "Bank")
@@ -486,7 +486,7 @@ def make_bank_entry(dt, dn):
 			"reference_type": "Expense Claim",
 			"party_type": "Employee",
 			"party": expense_claim.employee,
-			"cost_center": svasamm_erp.get_default_cost_center(expense_claim.company),
+			"cost_center": hmmerp.get_default_cost_center(expense_claim.company),
 			"reference_name": expense_claim.name,
 		},
 	)
@@ -498,7 +498,7 @@ def make_bank_entry(dt, dn):
 			"credit_in_account_currency": payable_amount,
 			"balance": default_bank_cash_account.balance,
 			"account_currency": default_bank_cash_account.account_currency,
-			"cost_center": svasamm_erp.get_default_cost_center(expense_claim.company),
+			"cost_center": hmmerp.get_default_cost_center(expense_claim.company),
 			"account_type": default_bank_cash_account.account_type,
 		},
 	)
@@ -509,7 +509,7 @@ def make_bank_entry(dt, dn):
 @frappe.whitelist()
 def get_expense_claim_account_and_cost_center(expense_claim_type, company):
 	data = get_expense_claim_account(expense_claim_type, company)
-	cost_center = svasamm_erp.get_default_cost_center(company)
+	cost_center = hmmerp.get_default_cost_center(company)
 
 	return {"account": data.get("account"), "cost_center": cost_center}
 
@@ -611,7 +611,7 @@ def update_payment_for_expense_claim(doc, method=None):
 
 def update_outstanding_amount_in_payment_entry(expense_claim: dict, pe_reference: str):
 	"""updates outstanding amount back in Payment Entry reference"""
-	# TODO: refactor convoluted code after svasamm_erp payment entry becomes extensible
+	# TODO: refactor convoluted code after hmmerp payment entry becomes extensible
 	outstanding_amount = get_outstanding_amount_for_claim(expense_claim)
 	frappe.db.set_value("Payment Entry Reference", pe_reference, "outstanding_amount", outstanding_amount)
 

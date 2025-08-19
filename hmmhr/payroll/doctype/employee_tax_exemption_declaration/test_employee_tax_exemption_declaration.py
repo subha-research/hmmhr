@@ -5,8 +5,8 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_months, getdate
 
-import svasamm_erp
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+import hmmerp
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.utils import DuplicateDeclarationError
 
@@ -37,9 +37,9 @@ class TestEmployeeTaxExemptionDeclaration(IntegrationTestCase):
 			{
 				"doctype": "Employee Tax Exemption Declaration",
 				"employee": frappe.get_value("Employee", {"user_id": "employee@taxexemption.com"}, "name"),
-				"company": svasamm_erp.get_default_company(),
+				"company": hmmerp.get_default_company(),
 				"payroll_period": PAYROLL_PERIOD_NAME,
-				"currency": svasamm_erp.get_default_currency(),
+				"currency": hmmerp.get_default_currency(),
 				"declarations": [
 					dict(
 						exemption_sub_category="_Test Sub Category",
@@ -61,9 +61,9 @@ class TestEmployeeTaxExemptionDeclaration(IntegrationTestCase):
 			{
 				"doctype": "Employee Tax Exemption Declaration",
 				"employee": frappe.get_value("Employee", {"user_id": "employee@taxexemption.com"}, "name"),
-				"company": svasamm_erp.get_default_company(),
+				"company": hmmerp.get_default_company(),
 				"payroll_period": PAYROLL_PERIOD_NAME,
-				"currency": svasamm_erp.get_default_currency(),
+				"currency": hmmerp.get_default_currency(),
 				"declarations": [
 					dict(
 						exemption_sub_category="_Test Sub Category",
@@ -83,9 +83,9 @@ class TestEmployeeTaxExemptionDeclaration(IntegrationTestCase):
 			{
 				"doctype": "Employee Tax Exemption Declaration",
 				"employee": frappe.get_value("Employee", {"user_id": "employee@taxexemption.com"}, "name"),
-				"company": svasamm_erp.get_default_company(),
+				"company": hmmerp.get_default_company(),
 				"payroll_period": PAYROLL_PERIOD_NAME,
-				"currency": svasamm_erp.get_default_currency(),
+				"currency": hmmerp.get_default_currency(),
 				"declarations": [
 					dict(
 						exemption_sub_category="_Test Sub Category",
@@ -106,9 +106,9 @@ class TestEmployeeTaxExemptionDeclaration(IntegrationTestCase):
 			{
 				"doctype": "Employee Tax Exemption Declaration",
 				"employee": frappe.get_value("Employee", {"user_id": "employee@taxexemption.com"}, "name"),
-				"company": svasamm_erp.get_default_company(),
+				"company": hmmerp.get_default_company(),
 				"payroll_period": PAYROLL_PERIOD_NAME,
-				"currency": svasamm_erp.get_default_currency(),
+				"currency": hmmerp.get_default_currency(),
 				"declarations": [
 					dict(
 						exemption_sub_category="_Test Sub Category",
@@ -432,7 +432,7 @@ def create_payroll_period(**args):
 			dict(
 				doctype="Payroll Period",
 				name=name,
-				company=args.company or svasamm_erp.get_default_company(),
+				company=args.company or hmmerp.get_default_company(),
 				start_date=args.start_date or date(date.today().year, 1, 1),
 				end_date=args.end_date or date(date.today().year, 12, 31),
 			)

@@ -46,7 +46,7 @@ frappe.ui.form.on("Salary Structure", {
 	},
 
 	mode_of_payment: function (frm) {
-		svasamm_erp.accounts.pos.get_payment_mode_account(
+		hmmerp.accounts.pos.get_payment_mode_account(
 			frm,
 			frm.doc.mode_of_payment,
 			function (account) {

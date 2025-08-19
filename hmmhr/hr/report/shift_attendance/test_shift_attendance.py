@@ -4,7 +4,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import format_datetime
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.shift_type.test_shift_type import setup_shift_type
 from hmmhr.hr.report.shift_attendance.shift_attendance import execute

@@ -2,7 +2,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, getdate
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.exit_interview.test_exit_interview import create_exit_interview
 from hmmhr.hr.doctype.full_and_final_statement.test_full_and_final_statement import (

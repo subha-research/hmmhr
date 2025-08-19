@@ -45,7 +45,7 @@ frappe.ui.form.on("Employee Tax Exemption Proof Submission", {
 			if (frm.doc.payroll_period) filters["payroll_period"] = frm.doc.payroll_period;
 
 			frm.add_custom_button(__("Get Details From Declaration"), function () {
-				svasamm_erp.utils.map_current_doc({
+				hmmerp.utils.map_current_doc({
 					method: "hmmhr.payroll.doctype.employee_tax_exemption_declaration.employee_tax_exemption_declaration.make_proof_submission",
 					source_doctype: "Employee Tax Exemption Declaration",
 					target: frm,

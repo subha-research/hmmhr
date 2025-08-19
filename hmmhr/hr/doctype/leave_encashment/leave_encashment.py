@@ -7,8 +7,8 @@ from frappe import _, bold
 from frappe.model.document import Document
 from frappe.utils import flt, format_date, get_link_to_form, getdate
 
-from svasamm_erp.accounts.general_ledger import make_gl_entries
-from svasamm_erp.controllers.accounts_controller import AccountsController
+from hmmerp.accounts.general_ledger import make_gl_entries
+from hmmerp.controllers.accounts_controller import AccountsController
 
 from hmmhr.hr.doctype.leave_application.leave_application import get_leaves_for_period
 from hmmhr.hr.doctype.leave_ledger_entry.leave_ledger_entry import create_leave_ledger_entry

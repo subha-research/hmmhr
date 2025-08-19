@@ -5,9 +5,9 @@ import frappe
 from frappe.tests import IntegrationTestCase, change_settings
 from frappe.utils import flt, nowdate
 
-import svasamm_erp
-from svasamm_erp.accounts.doctype.account.test_account import create_account
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+import hmmerp
+from hmmerp.accounts.doctype.account.test_account import create_account
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.employee_advance.employee_advance import (
 	EmployeeAdvanceOverPayment,
@@ -392,7 +392,7 @@ def make_employee_advance(employee_name, args=None):
 	doc.employee = employee_name
 	doc.company = "_Test Company"
 	doc.purpose = "For site visit"
-	doc.currency = svasamm_erp.get_company_currency("_Test company")
+	doc.currency = hmmerp.get_company_currency("_Test company")
 	doc.exchange_rate = 1
 	doc.advance_amount = 1000
 	doc.posting_date = nowdate()

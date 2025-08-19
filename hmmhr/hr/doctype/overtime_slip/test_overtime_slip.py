@@ -5,7 +5,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, flt, getdate, nowdate, today
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.employee_checkin.test_employee_checkin import make_checkin
 from hmmhr.hr.doctype.overtime_type.test_overtime_type import create_overtime_type

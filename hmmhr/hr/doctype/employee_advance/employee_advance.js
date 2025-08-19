@@ -15,7 +15,7 @@ frappe.ui.form.on("Employee Advance", {
 			if (!frm.doc.employee) {
 				frappe.msgprint(__("Please select employee first"));
 			}
-			let company_currency = svasamm_erp.get_currency(frm.doc.company);
+			let company_currency = hmmerp.get_currency(frm.doc.company);
 			let currencies = [company_currency];
 			if (frm.doc.currency && frm.doc.currency != company_currency) {
 				currencies.push(frm.doc.currency);
@@ -179,7 +179,7 @@ frappe.ui.form.on("Employee Advance", {
 			"currency",
 			(r) => {
 				if (r.currency) frm.set_value("currency", r.currency);
-				else frm.set_value("currency", svasamm_erp.get_currency(frm.doc.company));
+				else frm.set_value("currency", hmmerp.get_currency(frm.doc.company));
 				frm.refresh_fields();
 			},
 		);
@@ -190,9 +190,9 @@ frappe.ui.form.on("Employee Advance", {
 			var from_currency = frm.doc.currency;
 			var company_currency;
 			if (!frm.doc.company) {
-				company_currency = svasamm_erp.get_currency(frappe.defaults.get_default("Company"));
+				company_currency = hmmerp.get_currency(frappe.defaults.get_default("Company"));
 			} else {
-				company_currency = svasamm_erp.get_currency(frm.doc.company);
+				company_currency = hmmerp.get_currency(frm.doc.company);
 			}
 			if (from_currency != company_currency) {
 				frm.events.set_exchange_rate(frm, from_currency, company_currency);
@@ -207,7 +207,7 @@ frappe.ui.form.on("Employee Advance", {
 
 	set_exchange_rate: function (frm, from_currency, company_currency) {
 		frappe.call({
-			method: "svasamm_erp.setup.utils.get_exchange_rate",
+			method: "hmmerp.setup.utils.get_exchange_rate",
 			args: {
 				from_currency: from_currency,
 				to_currency: company_currency,

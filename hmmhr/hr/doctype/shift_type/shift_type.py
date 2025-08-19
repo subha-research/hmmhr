@@ -10,8 +10,8 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import add_days, cint, create_batch, get_datetime, get_time, getdate, time_diff
 
-from svasamm_erp.setup.doctype.employee.employee import get_holiday_list_for_employee
-from svasamm_erp.setup.doctype.holiday_list.holiday_list import is_holiday
+from hmmerp.setup.doctype.employee.employee import get_holiday_list_for_employee
+from hmmerp.setup.doctype.holiday_list.holiday_list import is_holiday
 
 from hmmhr.hr.doctype.attendance.attendance import mark_attendance
 from hmmhr.hr.doctype.employee_checkin.employee_checkin import (

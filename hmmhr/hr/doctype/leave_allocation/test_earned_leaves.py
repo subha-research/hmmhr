@@ -9,7 +9,7 @@ from frappe.utils import (
 	getdate,
 )
 
-from svasamm_erp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from hmmerp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hmmhr.hr.doctype.leave_allocation.test_leave_allocation import create_leave_allocation
 from hmmhr.hr.doctype.leave_application.leave_application import (

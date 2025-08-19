@@ -6,9 +6,9 @@ frappe.treeview_settings["Goal"] = {
 		{
 			fieldname: "company",
 			fieldtype: "Select",
-			options: svasamm_erp.utils.get_tree_options("company"),
+			options: hmmerp.utils.get_tree_options("company"),
 			label: __("Company"),
-			default: svasamm_erp.utils.get_tree_default("company"),
+			default: hmmerp.utils.get_tree_default("company"),
 		},
 		{
 			fieldname: "appraisal_cycle",

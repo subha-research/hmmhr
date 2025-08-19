@@ -1,4 +1,4 @@
-from svasamm_erp.accounts.doctype.accounting_dimension.accounting_dimension import (
+from hmmerp.accounts.doctype.accounting_dimension.accounting_dimension import (
 	create_accounting_dimensions_for_doctype,
 )
 

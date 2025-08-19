@@ -14,8 +14,8 @@ from frappe.utils import (
 	nowdate,
 )
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
-from svasamm_erp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from hmmerp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hmmhr.hr.doctype.attendance.attendance import mark_attendance
 from hmmhr.hr.doctype.leave_allocation.test_leave_allocation import create_leave_allocation

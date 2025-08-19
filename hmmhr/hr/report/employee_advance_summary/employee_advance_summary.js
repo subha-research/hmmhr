@@ -15,7 +15,7 @@ frappe.query_reports["Employee Advance Summary"] = {
 			fieldname: "from_date",
 			label: __("From Date"),
 			fieldtype: "Date",
-			default: svasamm_erp.utils.get_fiscal_year(frappe.datetime.get_today(), true)[1],
+			default: hmmerp.utils.get_fiscal_year(frappe.datetime.get_today(), true)[1],
 			width: "80",
 		},
 		{

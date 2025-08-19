@@ -6,7 +6,7 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 
-from svasamm_erp.setup.doctype.employee.employee import get_employee_emails
+from hmmerp.setup.doctype.employee.employee import get_employee_emails
 
 
 class TrainingResult(Document):

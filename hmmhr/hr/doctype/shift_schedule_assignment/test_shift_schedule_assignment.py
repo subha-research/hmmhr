@@ -5,7 +5,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, getdate
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.shift_schedule.shift_schedule import get_or_insert_shift_schedule
 from hmmhr.hr.doctype.shift_type.test_shift_type import setup_shift_type

@@ -5,7 +5,7 @@ import frappe
 
 def execute():
 	doctypes_to_update = {
-		"hmmhr": [
+		"hr": [
 			"Appraisal",
 			"Leave Allocation",
 			"Expense Claim",

@@ -4,7 +4,7 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.payroll.doctype.employee_tax_exemption_declaration.test_employee_tax_exemption_declaration import (
 	PAYROLL_PERIOD_END,

@@ -6,8 +6,8 @@ from frappe import _, bold
 from frappe.query_builder.functions import Abs, Sum
 from frappe.utils import cstr, flt, get_datetime, get_link_to_form
 
-from svasamm_erp.accounts.general_ledger import make_gl_entries
-from svasamm_erp.controllers.accounts_controller import AccountsController
+from hmmerp.accounts.general_ledger import make_gl_entries
+from hmmerp.controllers.accounts_controller import AccountsController
 
 
 class Gratuity(AccountsController):

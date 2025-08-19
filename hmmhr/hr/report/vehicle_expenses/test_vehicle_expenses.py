@@ -6,8 +6,8 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import getdate
 
-from svasamm_erp.accounts.utils import get_fiscal_year
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.accounts.utils import get_fiscal_year
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.vehicle_log.test_vehicle_log import get_vehicle, make_vehicle_log
 from hmmhr.hr.doctype.vehicle_log.vehicle_log import make_expense_claim

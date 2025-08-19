@@ -65,26 +65,26 @@ def get_active_employees() -> int:
 
 @frappe.whitelist(allow_guest=True)
 def subscription_updated(app: str, plan: str):
-	if app in ["hmmhr", "svasamm_erp"] and plan:
-		update_svasamm_erp_access()
+	if app in ["hmmhr", "hmmerp"] and plan:
+		update_hmmerp_access()
 
 
-def update_svasamm_erp_access(user_input: dict | None):
+def update_hmmerp_access(user_input: dict | None):
 	"""
 	Called from hooks after setup wizard completion, ignored if user has no hmmhr subscription
-	enables svasamm_erp workspaces and roles if user has subscribed to both hmmhr and svasamm_erp
-	disables svasamm_erp workspaces and roles if user has subscribed to hmmhr but not svasamm_erp
+	enables hmmerp workspaces and roles if user has subscribed to both hmmhr and hmmerp
+	disables hmmerp workspaces and roles if user has subscribed to hmmhr but not hmmerp
 	"""
 	if not frappe.utils.get_url().endswith(".frappehr.com"):
 		return
 
-	update_svasamm_erp_workspaces(True)
-	update_svasamm_erp_roles(True)
+	update_hmmerp_workspaces(True)
+	update_hmmerp_roles(True)
 	set_app_logo()
 
 
-def update_svasamm_erp_workspaces(disable: bool = True):
-	svasamm_erp_workspaces = [
+def update_hmmerp_workspaces(disable: bool = True):
+	hmmerp_workspaces = [
 		"Home",
 		"Assets",
 		"Accounting",
@@ -97,7 +97,7 @@ def update_svasamm_erp_workspaces(disable: bool = True):
 		"Support",
 	]
 
-	for workspace in svasamm_erp_workspaces:
+	for workspace in hmmerp_workspaces:
 		try:
 			workspace_doc = frappe.get_doc("Workspace", workspace)
 			workspace_doc.flags.ignore_links = True
@@ -108,8 +108,8 @@ def update_svasamm_erp_workspaces(disable: bool = True):
 			frappe.clear_messages()
 
 
-def update_svasamm_erp_roles(disable: bool = True):
-	roles = get_svasamm_erp_roles()
+def update_hmmerp_roles(disable: bool = True):
+	roles = get_hmmerp_roles()
 	for role in roles:
 		try:
 			role_doc = frappe.get_doc("Role", role)
@@ -124,15 +124,15 @@ def set_app_logo():
 	frappe.db.set_single_value("Navbar Settings", "app_logo", "/assets/hmmhr/images/frappe-hr-logo.svg")
 
 
-def get_svasamm_erp_roles() -> set:
-	svasamm_erp_roles = get_roles_for_app("svasamm_erp")
+def get_hmmerp_roles() -> set:
+	hmmerp_roles = get_roles_for_app("hmmerp")
 	hrms_roles = get_roles_for_app("hmmhr")
-	return svasamm_erp_roles - hrms_roles - set(STANDARD_ROLES)
+	return hmmerp_roles - hrms_roles - set(STANDARD_ROLES)
 
 
 def get_roles_for_app(app_name: str) -> set:
-	svasamm_erp_modules = get_modules_by_app(app_name)
-	doctypes = get_doctypes_by_modules(svasamm_erp_modules)
+	hmmerp_modules = get_modules_by_app(app_name)
+	doctypes = get_doctypes_by_modules(hmmerp_modules)
 	roles = roles_by_doctype(doctypes)
 
 	return roles
@@ -157,14 +157,14 @@ def roles_by_doctype(doctypes: list) -> set:
 	return set(roles)
 
 
-def hide_svasamm_erp() -> bool:
+def hide_hmmerp() -> bool:
 	hr_subscription = has_subscription(frappe.conf.sk_hrms)
-	svasamm_erp_subscription = has_subscription(frappe.conf.sk_svasamm_erp_smb or frappe.conf.sk_svasamm_erp)
+	hmmerp_subscription = has_subscription(frappe.conf.sk_hmmerp_smb or frappe.conf.sk_hmmerp)
 
 	if not hr_subscription:
 		return False
 
-	if hr_subscription and svasamm_erp_subscription:
+	if hr_subscription and hmmerp_subscription:
 		# subscribed for ERPNext
 		return False
 

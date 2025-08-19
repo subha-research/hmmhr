@@ -6,7 +6,7 @@ import frappe
 from frappe import _
 from frappe.utils import flt
 
-import svasamm_erp
+import hmmerp
 
 salary_slip = frappe.qb.DocType("Salary Slip")
 salary_detail = frappe.qb.DocType("Salary Detail")
@@ -20,7 +20,7 @@ def execute(filters=None):
 	currency = None
 	if filters.get("currency"):
 		currency = filters.get("currency")
-	company_currency = svasamm_erp.get_company_currency(filters.get("company"))
+	company_currency = hmmerp.get_company_currency(filters.get("company"))
 
 	salary_slips = get_salary_slips(filters, company_currency)
 	if not salary_slips:

@@ -3,7 +3,7 @@
 
 var in_progress = false;
 
-frappe.provide("svasamm_erp.accounts.dimensions");
+frappe.provide("hmmerp.accounts.dimensions");
 
 frappe.ui.form.on("Payroll Entry", {
 	onload: function (frm) {
@@ -14,7 +14,7 @@ frappe.ui.form.on("Payroll Entry", {
 		}
 		frm.toggle_reqd(["payroll_frequency"], !frm.doc.salary_slip_based_on_timesheet);
 
-		svasamm_erp.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
+		hmmerp.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
 		frm.events.department_filters(frm);
 		frm.events.payroll_payable_account_filters(frm);
 
@@ -276,7 +276,7 @@ frappe.ui.form.on("Payroll Entry", {
 
 	company: function (frm) {
 		frm.events.clear_employee_table(frm);
-		svasamm_erp.accounts.dimensions.update_dimension(frm, frm.doctype);
+		hmmerp.accounts.dimensions.update_dimension(frm, frm.doctype);
 		frm.trigger("set_payable_account_and_currency");
 	},
 
@@ -297,14 +297,14 @@ frappe.ui.form.on("Payroll Entry", {
 	currency: function (frm) {
 		var company_currency;
 		if (!frm.doc.company) {
-			company_currency = svasamm_erp.get_currency(frappe.defaults.get_default("Company"));
+			company_currency = hmmerp.get_currency(frappe.defaults.get_default("Company"));
 		} else {
-			company_currency = svasamm_erp.get_currency(frm.doc.company);
+			company_currency = hmmerp.get_currency(frm.doc.company);
 		}
 		if (frm.doc.currency) {
 			if (company_currency != frm.doc.currency) {
 				frappe.call({
-					method: "svasamm_erp.setup.utils.get_exchange_rate",
+					method: "hmmerp.setup.utils.get_exchange_rate",
 					args: {
 						from_currency: frm.doc.currency,
 						to_currency: company_currency,

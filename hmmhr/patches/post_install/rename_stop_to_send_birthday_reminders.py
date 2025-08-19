@@ -3,7 +3,7 @@ from frappe.model.utils.rename_field import rename_field
 
 
 def execute():
-	frappe.reload_doc("hmmhr", "doctype", "hr_settings")
+	frappe.reload_doc("hr", "doctype", "hr_settings")
 
 	try:
 		# Rename the field

@@ -12,7 +12,7 @@ frappe.ui.form.on("Leave Application", {
 				},
 			};
 		});
-		frm.set_query("employee", svasamm_erp.queries.employee);
+		frm.set_query("employee", hmmerp.queries.employee);
 	},
 
 	onload: function (frm) {

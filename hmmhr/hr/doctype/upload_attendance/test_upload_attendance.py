@@ -5,8 +5,8 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import getdate
 
-import svasamm_erp
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+import hmmerp
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.upload_attendance.upload_attendance import get_data
 
@@ -18,7 +18,7 @@ class TestUploadAttendance(IntegrationTestCase):
 	def setUpClass(cls):
 		super().setUpClass()
 		frappe.db.set_value(
-			"Company", svasamm_erp.get_default_company(), "default_holiday_list", "_Test Holiday List"
+			"Company", hmmerp.get_default_company(), "default_holiday_list", "_Test Holiday List"
 		)
 
 	def test_date_range(self):

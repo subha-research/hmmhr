@@ -2,8 +2,8 @@ import frappe
 
 
 def execute():
-	frappe.reload_doc("HR", "doctype", "Leave Allocation")
-	frappe.reload_doc("HR", "doctype", "Leave Ledger Entry")
+	frappe.reload_doc("hr", "doctype", "Leave Allocation")
+	frappe.reload_doc("hr", "doctype", "Leave Ledger Entry")
 	frappe.db.sql(
 		"""
 		UPDATE `tabLeave Ledger Entry` as lle

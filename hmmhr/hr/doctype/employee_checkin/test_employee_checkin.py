@@ -15,7 +15,7 @@ from frappe.utils import (
 	nowdate,
 )
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.attendance.attendance import mark_attendance
 from hmmhr.hr.doctype.employee_checkin.employee_checkin import (

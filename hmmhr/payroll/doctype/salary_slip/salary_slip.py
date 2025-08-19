@@ -28,10 +28,10 @@ from frappe.utils import (
 )
 from frappe.utils.background_jobs import enqueue
 
-import svasamm_erp
-from svasamm_erp.accounts.utils import get_fiscal_year
-from svasamm_erp.setup.doctype.employee.employee import get_holiday_list_for_employee
-from svasamm_erp.utilities.transaction_base import TransactionBase
+import hmmerp
+from hmmerp.accounts.utils import get_fiscal_year
+from hmmerp.setup.doctype.employee.employee import get_holiday_list_for_employee
+from hmmerp.utilities.transaction_base import TransactionBase
 
 from hmmhr.hr.utils import validate_active_employee
 from hmmhr.payroll.doctype.additional_salary.additional_salary import get_additional_salaries
@@ -177,7 +177,7 @@ class SalarySlip(TransactionBase):
 
 	def set_net_total_in_words(self):
 		doc_currency = self.currency
-		company_currency = svasamm_erp.get_company_currency(self.company)
+		company_currency = hmmerp.get_company_currency(self.company)
 		total = self.net_pay if self.is_rounding_total_disabled() else self.rounded_total
 		base_total = self.base_net_pay if self.is_rounding_total_disabled() else self.base_rounded_total
 		self.total_in_words = money_in_words(total, doc_currency)

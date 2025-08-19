@@ -1,8 +1,8 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 
-from svasamm_erp.setup.doctype.designation.test_designation import create_designation
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.designation.test_designation import create_designation
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.appraisal_cycle.test_appraisal_cycle import create_appraisal_cycle
 from hmmhr.hr.doctype.appraisal_template.test_appraisal_template import create_appraisal_template

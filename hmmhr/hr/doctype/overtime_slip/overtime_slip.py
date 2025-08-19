@@ -348,7 +348,7 @@ class OvertimeSlip(Document):
 		return amount
 
 	def get_holiday_map(self):
-		from svasamm_erp.setup.doctype.employee.employee import get_holiday_list_for_employee
+		from hmmerp.setup.doctype.employee.employee import get_holiday_list_for_employee
 
 		from hmmhr.utils.holiday_list import get_holiday_dates_between
 

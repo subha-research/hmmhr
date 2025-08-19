@@ -31,7 +31,7 @@ frappe.listview_settings["Attendance"] = {
 						options: "Employee",
 						get_query: () => {
 							return {
-								query: "svasamm_erp.controllers.queries.employee_query",
+								query: "hmmerp.controllers.queries.employee_query",
 							};
 						},
 						reqd: 1,

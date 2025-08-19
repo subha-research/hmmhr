@@ -245,7 +245,7 @@ app_name = "hmmhr"
 app_title = "HR"
 app_publisher = "Soumen Chowdhury"
 app_description = "Human Resource Management System"
-required_apps = ["frappe/svasamm_erp"]
+required_apps = ["frappe/hmmerp"]
 app_logo_url = "/assets/hmmhr/images/frappe-hmmhr-logo.svg"
 app_email = "soumene0008@outlook.com"
 app_license = "mit"
@@ -292,12 +292,12 @@ app_include_css = "hmmhr.bundle.css"
 
 # include js in doctype views
 doctype_js = {
-	"Employee": "public/js/svasamm_erp/employee.js",
-	"Company": "public/js/svasamm_erp/company.js",
-	"Department": "public/js/svasamm_erp/department.js",
-	"Timesheet": "public/js/svasamm_erp/timesheet.js",
-	"Payment Entry": "public/js/svasamm_erp/payment_entry.js",
-	"Journal Entry": "public/js/svasamm_erp/journal_entry.js",
+	"Employee": "public/js/hmmerp/employee.js",
+	"Company": "public/js/hmmerp/company.js",
+	"Department": "public/js/hmmerp/department.js",
+	"Timesheet": "public/js/hmmerp/timesheet.js",
+	"Payment Entry": "public/js/hmmerp/payment_entry.js",
+	"Journal Entry": "public/js/hmmerp/journal_entry.js",
 }
 
 # Home Pages
@@ -341,7 +341,7 @@ jinja = {
 after_install = "hmmhr.install.after_install"
 after_migrate = "hmmhr.setup.update_select_perm_after_install"
 
-setup_wizard_complete = "hmmhr.subscription_utils.update_svasamm_erp_access"
+setup_wizard_complete = "hmmhr.subscription_utils.update_hmmerp_access"
 
 # Uninstallation
 # ------------
@@ -369,7 +369,7 @@ before_app_uninstall = "hmmhr.setup.before_app_uninstall"
 # -----------
 # Permissions evaluated in scripted ways
 
-has_upload_permission = {"Employee": "svasamm_erp.setup.doctype.employee.employee.has_upload_permission"}
+has_upload_permission = {"Employee": "hmmerp.setup.doctype.employee.employee.has_upload_permission"}
 
 # DocType Class
 # ---------------
@@ -388,7 +388,7 @@ override_doctype_class = {
 
 doc_events = {
 	"User": {
-		"validate": "svasamm_erp.setup.doctype.employee.employee.validate_employee_role",
+		"validate": "hmmerp.setup.doctype.employee.employee.validate_employee_role",
 	},
 	"Company": {
 		"validate": "hmmhr.overrides.company.validate_default_accounts",

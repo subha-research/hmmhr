@@ -12,6 +12,6 @@ frappe.ui.form.on("Shift Request", {
 				},
 			};
 		});
-		frm.set_query("employee", svasamm_erp.queries.employee);
+		frm.set_query("employee", hmmerp.queries.employee);
 	},
 });

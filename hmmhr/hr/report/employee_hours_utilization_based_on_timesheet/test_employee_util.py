@@ -2,8 +2,8 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils.make_random import get_random
 
-from svasamm_erp.projects.doctype.project.test_project import make_project
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.projects.doctype.project.test_project import make_project
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.report.employee_hours_utilization_based_on_timesheet.employee_hours_utilization_based_on_timesheet import (
 	execute,

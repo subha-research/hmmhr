@@ -1,6 +1,6 @@
 import frappe
 
-from svasamm_erp.tests.utils import ERPNextTestSuite
+from hmmerp.tests.utils import ERPNextTestSuite
 
 
 class HRMSTestSuite(ERPNextTestSuite):

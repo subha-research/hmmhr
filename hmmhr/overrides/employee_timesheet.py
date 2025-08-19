@@ -3,7 +3,7 @@
 
 from frappe.utils.data import flt
 
-from svasamm_erp.projects.doctype.timesheet.timesheet import Timesheet
+from hmmerp.projects.doctype.timesheet.timesheet import Timesheet
 
 
 class EmployeeTimesheet(Timesheet):

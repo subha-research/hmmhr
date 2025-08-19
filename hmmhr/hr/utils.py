@@ -24,9 +24,9 @@ from frappe.utils import (
 	nowdate,
 )
 
-import svasamm_erp
-from svasamm_erp import get_company_currency
-from svasamm_erp.setup.doctype.employee.employee import (
+import hmmerp
+from hmmerp import get_company_currency
+from hmmerp.setup.doctype.employee.employee import (
 	InactiveEmployeeStatusError,
 	get_holiday_list_for_employee,
 )
@@ -629,21 +629,21 @@ def get_holidays_for_employee(employee, start_date, end_date, raise_exception=Tr
 	return holidays
 
 
-@svasamm_erp.allow_regional
+@hmmerp.allow_regional
 def calculate_annual_eligible_hra_exemption(doc):
 	# Don't delete this method, used for localization
 	# Indian HRA Exemption Calculation
 	return {}
 
 
-@svasamm_erp.allow_regional
+@hmmerp.allow_regional
 def calculate_hra_exemption_for_period(doc):
 	# Don't delete this method, used for localization
 	# Indian HRA Exemption Calculation
 	return {}
 
 
-@svasamm_erp.allow_regional
+@hmmerp.allow_regional
 def calculate_tax_with_marginal_relief(tax_slab, tax_amount, annual_taxable_earning):
 	# Don't delete this method, used for localization
 	# Indian TDS Calculation
@@ -733,7 +733,7 @@ def validate_loan_repay_from_salary(doc, method=None):
 			frappe.throw(_("Please select a Company"))
 
 		employee_currency = get_employee_currency(doc.applicant)
-		company_currency = svasamm_erp.get_company_currency(doc.company)
+		company_currency = hmmerp.get_company_currency(doc.company)
 		if employee_currency != company_currency:
 			frappe.throw(
 				_(

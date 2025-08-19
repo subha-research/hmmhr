@@ -2,7 +2,7 @@ import frappe
 from frappe.tests import change_settings
 from frappe.utils import add_days, add_months, getdate, nowdate
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.leave_allocation.leave_allocation import (
 	BackDatedAllocationError,

@@ -6,7 +6,7 @@ from datetime import date
 import frappe
 from frappe.tests import IntegrationTestCase
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.leave_allocation.test_leave_allocation import create_leave_allocation
 from hmmhr.hr.doctype.leave_control_panel.leave_control_panel import LeaveControlPanel

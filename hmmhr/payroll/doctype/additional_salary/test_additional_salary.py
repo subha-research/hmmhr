@@ -5,8 +5,8 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, add_months, nowdate
 
-import svasamm_erp
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+import hmmerp
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.payroll.doctype.salary_component.test_salary_component import create_salary_component
 from hmmhr.payroll.doctype.salary_slip.test_salary_slip import make_employee_salary_slip, setup_test
@@ -181,7 +181,7 @@ def get_additional_salary(
 	add_sal.overwrite_salary_structure_amount = overwrite_salary_structure
 
 	add_sal.amount = 5000
-	add_sal.currency = svasamm_erp.get_default_currency()
+	add_sal.currency = hmmerp.get_default_currency()
 	add_sal.save()
 	add_sal.submit()
 

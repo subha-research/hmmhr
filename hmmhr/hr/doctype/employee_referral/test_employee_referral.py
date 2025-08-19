@@ -5,8 +5,8 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import today
 
-from svasamm_erp.setup.doctype.designation.test_designation import create_designation
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.designation.test_designation import create_designation
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.employee_referral.employee_referral import (
 	create_additional_salary,

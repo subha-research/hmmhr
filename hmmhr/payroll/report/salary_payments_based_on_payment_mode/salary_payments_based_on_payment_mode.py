@@ -5,7 +5,7 @@
 import frappe
 from frappe import _
 
-import svasamm_erp
+import hmmerp
 
 from hmmhr.payroll.report.provident_fund_deductions.provident_fund_deductions import get_conditions
 
@@ -116,7 +116,7 @@ def get_data(filters, mode_of_payments):
 		data.append({"branch": "Total Deductions", mode_of_payments[0]: total_deductions})
 		data.append({"branch": "Total Net Pay", mode_of_payments[0]: total_row.get("total")})
 
-		currency = svasamm_erp.get_company_currency(filters.company)
+		currency = hmmerp.get_company_currency(filters.company)
 		report_summary = get_report_summary(gross_pay, total_deductions, total_row.get("total"), currency)
 
 	return data, total_row, report_summary

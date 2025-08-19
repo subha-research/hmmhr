@@ -39,7 +39,7 @@ class Attendance(Document):
 			self.half_day_status = None
 
 	def validate(self):
-		from svasamm_erp.controllers.status_updater import validate_status
+		from hmmerp.controllers.status_updater import validate_status
 
 		validate_status(self.status, ["Present", "Absent", "On Leave", "Half Day", "Work From Home"])
 		validate_active_employee(self.employee)

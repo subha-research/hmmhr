@@ -36,7 +36,7 @@ frappe.ui.form.on("Salary Slip", {
 
 		frm.set_query("employee", function () {
 			return {
-				query: "svasamm_erp.controllers.queries.employee_query",
+				query: "hmmerp.controllers.queries.employee_query",
 			};
 		});
 
@@ -99,7 +99,7 @@ frappe.ui.form.on("Salary Slip", {
 	},
 
 	set_exchange_rate: function (frm) {
-		const company_currency = svasamm_erp.get_currency(frm.doc.company);
+		const company_currency = hmmerp.get_currency(frm.doc.company);
 
 		if (frm.doc.docstatus === 0) {
 			if (frm.doc.currency) {
@@ -107,7 +107,7 @@ frappe.ui.form.on("Salary Slip", {
 				if (from_currency != company_currency) {
 					frm.events.hide_loan_section(frm);
 					frappe.call({
-						method: "svasamm_erp.setup.utils.get_exchange_rate",
+						method: "hmmerp.setup.utils.get_exchange_rate",
 						args: {
 							from_currency: from_currency,
 							to_currency: company_currency,
@@ -142,7 +142,7 @@ frappe.ui.form.on("Salary Slip", {
 	},
 
 	change_form_labels: function (frm) {
-		const company_currency = svasamm_erp.get_currency(frm.doc.company);
+		const company_currency = hmmerp.get_currency(frm.doc.company);
 
 		frm.set_currency_labels(
 			[

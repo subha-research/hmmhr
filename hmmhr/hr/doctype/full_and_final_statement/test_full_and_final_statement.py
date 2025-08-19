@@ -5,9 +5,9 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, today
 
-from svasamm_erp.assets.doctype.asset.test_asset import create_asset_data
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
-from svasamm_erp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
+from hmmerp.assets.doctype.asset.test_asset import create_asset_data
+from hmmerp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
 
 
 class TestFullandFinalStatement(IntegrationTestCase):

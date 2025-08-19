@@ -5,8 +5,8 @@ import frappe
 from frappe.tests import IntegrationTestCase, change_settings
 from frappe.utils import add_days, add_months, floor, flt, get_datetime, get_first_day, getdate
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
-from svasamm_erp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from hmmerp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hmmhr.hr.doctype.attendance.attendance import mark_attendance
 from hmmhr.hr.doctype.expense_claim.test_expense_claim import get_payable_account

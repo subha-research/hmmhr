@@ -7,7 +7,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_months, getdate
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.controllers.employee_reminders import send_holidays_reminder_in_advance
 from hmmhr.hr.doctype.hr_settings.hr_settings import set_proceed_with_frequency_change
@@ -18,7 +18,7 @@ class TestEmployeeReminders(IntegrationTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		from svasamm_erp.setup.doctype.holiday_list.test_holiday_list import make_holiday_list
+		from hmmerp.setup.doctype.holiday_list.test_holiday_list import make_holiday_list
 
 		# Create a test holiday list
 		test_holiday_dates = cls.get_test_holiday_dates()
@@ -82,7 +82,7 @@ class TestEmployeeReminders(IntegrationTestCase):
 		frappe.db.sql("delete from `tabEmail Queue Recipient`")
 
 	def test_is_holiday(self):
-		from svasamm_erp.setup.doctype.employee.employee import is_holiday
+		from hmmerp.setup.doctype.employee.employee import is_holiday
 
 		self.assertTrue(is_holiday(self.test_employee.name))
 		self.assertTrue(is_holiday(self.test_employee.name, date=self.test_holiday_dates[1]))

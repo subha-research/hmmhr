@@ -2,7 +2,7 @@
 // License: GNU General Public License v3. See license.txt
 
 frappe.provide("hmmhr.hr");
-frappe.provide("svasamm_erp.accounts.dimensions");
+frappe.provide("hmmerp.accounts.dimensions");
 
 frappe.ui.form.on("Expense Claim", {
 	setup: function (frm) {
@@ -61,7 +61,7 @@ frappe.ui.form.on("Expense Claim", {
 
 		frm.set_query("employee", function () {
 			return {
-				query: "svasamm_erp.controllers.queries.employee_query",
+				query: "hmmerp.controllers.queries.employee_query",
 			};
 		});
 
@@ -75,7 +75,7 @@ frappe.ui.form.on("Expense Claim", {
 	},
 
 	onload: function (frm) {
-		svasamm_erp.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
+		hmmerp.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
 
 		if (frm.doc.docstatus == 0) {
 			return frappe.call({
@@ -233,7 +233,7 @@ frappe.ui.form.on("Expense Claim", {
 	},
 
 	company: function (frm) {
-		svasamm_erp.accounts.dimensions.update_dimension(frm, frm.doctype);
+		hmmerp.accounts.dimensions.update_dimension(frm, frm.doctype);
 		var expenses = frm.doc.expenses;
 		for (var i = 0; i < expenses.length; i++) {
 			var expense = expenses[i];
@@ -395,7 +395,7 @@ frappe.ui.form.on("Expense Claim Detail", {
 	},
 
 	cost_center: function (frm, cdt, cdn) {
-		svasamm_erp.utils.copy_value_in_all_rows(frm.doc, cdt, cdn, "expenses", "cost_center");
+		hmmerp.utils.copy_value_in_all_rows(frm.doc, cdt, cdn, "expenses", "cost_center");
 	},
 });
 

@@ -7,7 +7,7 @@ import frappe.utils
 from frappe import _
 from frappe.model.document import Document
 
-from svasamm_erp.setup.doctype.holiday_list.holiday_list import is_holiday
+from hmmerp.setup.doctype.holiday_list.holiday_list import is_holiday
 
 from hmmhr.hr.doctype.daily_work_summary.daily_work_summary import get_user_emails_from_group
 

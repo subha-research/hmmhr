@@ -22,7 +22,7 @@ class HRSettings(Document):
 		PROCEED_WITH_FREQUENCY_CHANGE = False
 
 	def set_naming_series(self):
-		from svasamm_erp.utilities.naming import set_by_naming_series
+		from hmmerp.utilities.naming import set_by_naming_series
 
 		set_by_naming_series(
 			"Employee",

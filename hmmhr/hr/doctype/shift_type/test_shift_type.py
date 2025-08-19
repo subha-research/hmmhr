@@ -14,8 +14,8 @@ from frappe.utils import (
 	now_datetime,
 )
 
-from svasamm_erp.setup.doctype.employee.test_employee import make_employee
-from svasamm_erp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from hmmerp.setup.doctype.employee.test_employee import make_employee
+from hmmerp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hmmhr.hr.doctype.leave_application.test_leave_application import get_first_sunday
 from hmmhr.hr.doctype.shift_type.shift_type import update_last_sync_of_checkin

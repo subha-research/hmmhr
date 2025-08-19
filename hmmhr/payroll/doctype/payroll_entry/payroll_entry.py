@@ -22,11 +22,11 @@ from frappe.utils import (
 	getdate,
 )
 
-import svasamm_erp
-from svasamm_erp.accounts.doctype.accounting_dimension.accounting_dimension import (
+import hmmerp
+from hmmerp.accounts.doctype.accounting_dimension.accounting_dimension import (
 	get_accounting_dimensions,
 )
-from svasamm_erp.accounts.utils import get_fiscal_year
+from hmmerp.accounts.utils import get_fiscal_year
 
 from hmmhr.payroll.doctype.salary_slip.salary_slip_loan_utils import if_lending_app_installed
 from hmmhr.payroll.doctype.salary_withholding.salary_withholding import link_bank_entry_in_salary_withholdings
@@ -569,7 +569,7 @@ class PayrollEntry(Document):
 			currencies = []
 			payable_amount = 0
 			accounting_dimensions = get_accounting_dimensions() or []
-			company_currency = svasamm_erp.get_company_currency(self.company)
+			company_currency = hmmerp.get_company_currency(self.company)
 
 			payable_amount = self.get_payable_amount_for_earnings_and_deductions(
 				accounts,
@@ -1020,7 +1020,7 @@ class PayrollEntry(Document):
 
 		accounts = []
 		currencies = []
-		company_currency = svasamm_erp.get_company_currency(self.company)
+		company_currency = hmmerp.get_company_currency(self.company)
 		accounting_dimensions = get_accounting_dimensions() or []
 
 		exchange_rate, amount = self.get_amount_and_exchange_rate_for_journal_entry(
