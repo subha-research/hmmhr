@@ -24,8 +24,8 @@ bench set-redis-socketio-host redis://redis:6379
 sed -i '/redis/d' ./Procfile
 sed -i '/watch/d' ./Procfile
 
-bench get-app erpnext
-bench get-app hmmhr
+bench get-app https://github.com/subha-research/hmmerp --branch develop
+bench get-app https://github.com/subha-research/hmmhr --branch develop
 
 bench new-site hmmhr.localhost \
 --force \
