@@ -53,3 +53,26 @@ jspm_packages/
 
 # Aider AI Chat
 .aider*
+
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+hmmhr/public/dist
+hmmhr/public/node_modules
+hmmhr/docs/current
+node_modules/
+dist/
+__pycache__/
+
+# build/
+.vscode
+.vs
+node_modules
+*debug.log
+hmmhr/docs/current
+hmmhr/public/frontend
+hmmhr/www/hmmhr.html
+hmmhr/public/roster
+hmmhr/www/roster.html
