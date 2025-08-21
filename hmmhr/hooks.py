@@ -1,5 +1,5 @@
 app_name = "hmmhr"
-app_title = "HR"
+app_title = "Hmm HR"
 app_publisher = "Soumen Chowdhury"
 app_description = "Human Resource Management System"
 required_apps = ["frappe/hmmerp"]
@@ -17,7 +17,7 @@ add_to_apps_screen = [
 	{
 		"name": "hmmhr",
 		"logo": "/assets/hmmhr/images/frappe-hmmhr-logo.svg",
-		"title": "HR",
+		"title": "Hmm HR",
 		"route": "/app/overview",
 		"has_permission": "hmmhr.hr.utils.check_app_permission",
 	}
