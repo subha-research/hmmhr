@@ -112,6 +112,7 @@ jobs:
           FRAPPE_BRANCH: ${{ github.event.inputs.branch }}
 
       - name: Run Tests
+        # Run tests in parallel
         run: cd ~/frappe-bench/ && bench --site test_site run-parallel-tests --app hmmhr --total-builds ${{ strategy.job-total }} --build-number ${{ matrix.container }}
         env:
           TYPE: server
