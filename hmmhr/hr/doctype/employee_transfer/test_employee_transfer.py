@@ -4,7 +4,6 @@
 import frappe
 from frappe.tests import IntegrationTestCase, change_settings
 from frappe.utils import add_days, getdate
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 

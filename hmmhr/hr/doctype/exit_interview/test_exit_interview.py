@@ -9,7 +9,6 @@ from frappe.core.doctype.user_permission.test_user_permission import create_user
 from frappe.tests import IntegrationTestCase
 from frappe.tests.test_webform import create_custom_doctype, create_webform
 from frappe.utils import getdate
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.exit_interview.exit_interview import send_exit_questionnaire

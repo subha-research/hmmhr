@@ -9,7 +9,6 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import add_days, cstr, date_diff, getdate
 from frappe.utils.csvutils import UnicodeWriter
-
 from hmmerp.setup.doctype.employee.employee import get_holiday_list_for_employee
 
 from hmmhr.hr.utils import get_holiday_dates_for_employee

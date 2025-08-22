@@ -6,7 +6,6 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import add_days, date_diff, format_date, get_link_to_form, getdate
-
 from hmmerp.setup.doctype.employee.employee import is_holiday
 
 import hmmhr

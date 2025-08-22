@@ -1,9 +1,5 @@
 <template>
-	<svg
-		viewBox="0 0 48 24"
-		preserveAspectRatio="xMidYMin slice"
-		class="h-[84px] w-[84px] -mt-10"
-	>
+	<svg viewBox="0 0 48 24" preserveAspectRatio="xMidYMin slice" class="h-[84px] w-[84px] -mt-10">
 		<circle cx="24" cy="24" r="9" fill="#fff"></circle>
 		<circle
 			class="stroke-current text-gray-200"

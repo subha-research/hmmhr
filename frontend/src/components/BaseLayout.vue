@@ -24,15 +24,8 @@
 									</span>
 								</span>
 							</router-link>
-							<router-link
-								:to="{ name: 'Profile' }"
-								class="flex flex-col items-center"
-							>
-								<Avatar
-									:image="user.data.user_image"
-									:label="user.data.first_name"
-									size="xl"
-								/>
+							<router-link :to="{ name: 'Profile' }" class="flex flex-col items-center">
+								<Avatar :image="user.data.user_image" :label="user.data.first_name" size="xl" />
 							</router-link>
 						</div>
 					</div>

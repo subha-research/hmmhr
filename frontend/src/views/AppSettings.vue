@@ -7,14 +7,10 @@
 						class="flex flex-row bg-white shadow-sm py-4 px-3 items-center justify-between border-b sticky top-0 z-10"
 					>
 						<div class="flex flex-row items-center">
-							<Button
-								variant="ghost"
-								class="!pl-0 hover:bg-white"
-								@click="router.back()"
-							>
+							<Button variant="ghost" class="!pl-0 hover:bg-white" @click="router.back()">
 								<FeatherIcon name="chevron-left" class="h-5 w-5" />
 							</Button>
-							<h2 class="text-xl font-semibold text-gray-900">{{ __("Settings") }} </h2>
+							<h2 class="text-xl font-semibold text-gray-900">{{ __("Settings") }}</h2>
 						</div>
 					</header>
 
@@ -31,13 +27,14 @@
 							/>
 						</div>
 						<!-- Loading Indicator -->
-						<div
-							v-if="isLoading"
-							class="flex -mt-2 items-center justify-center gap-2"
-						>
+						<div v-if="isLoading" class="flex -mt-2 items-center justify-center gap-2">
 							<LoadingIndicator class="w-3 h-3 text-gray-800" />
 							<span class="text-gray-900 text-sm">
-								{{ pushNotificationState ? __("Disabling Push Notifications...") : __("Enabling Push Notifications...") }}
+								{{
+									pushNotificationState
+										? __("Disabling Push Notifications...")
+										: __("Enabling Push Notifications...")
+								}}
 							</span>
 						</div>
 					</div>
@@ -58,25 +55,18 @@ import { arePushNotificationsEnabled } from "@/data/notifications"
 
 const __ = inject("$translate")
 const router = useRouter()
-const pushNotificationState = ref(
-	window.frappePushNotification?.isNotificationEnabled()
-)
+const pushNotificationState = ref(window.frappePushNotification?.isNotificationEnabled())
 const isLoading = ref(false)
 
 const disablePushSetting = computed(() => {
 	return (
-		!(
-			window.frappe?.boot.push_relay_server_url &&
-			arePushNotificationsEnabled.data
-		) || isLoading.value
+		!(window.frappe?.boot.push_relay_server_url && arePushNotificationsEnabled.data) ||
+		isLoading.value
 	)
 })
 
 const description = computed(() => {
-	return !(
-		window.frappe?.boot.push_relay_server_url &&
-		arePushNotificationsEnabled.data
-	)
+	return !(window.frappe?.boot.push_relay_server_url && arePushNotificationsEnabled.data)
 		? __("Push notifications have been disabled on your site")
 		: ""
 })

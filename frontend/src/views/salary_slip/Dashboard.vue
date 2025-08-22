@@ -3,17 +3,15 @@
 		<template #body>
 			<div class="flex flex-col items-center my-7 p-4">
 				<div class="flex flex-col w-full bg-white rounded py-5 px-3.5 gap-5">
-					<div v-if="lastSalarySlip && lastSalarySlip.year_to_date" class="flex flex-col w-full gap-1.5">
+					<div
+						v-if="lastSalarySlip && lastSalarySlip.year_to_date"
+						class="flex flex-col w-full gap-1.5"
+					>
 						<span class="text-gray-600 text-sm font-medium leading-5">
 							{{ __("Year To Date") }}
 						</span>
 						<span class="text-gray-800 text-xl font-bold leading-6">
-							{{
-								formatCurrency(
-									lastSalarySlip.year_to_date,
-									lastSalarySlip.currency
-								)
-							}}
+							{{ formatCurrency(lastSalarySlip.year_to_date, lastSalarySlip.currency) }}
 						</span>
 					</div>
 
@@ -96,15 +94,7 @@ const payrollPeriods = createListResource({
 
 const documents = createListResource({
 	doctype: "Salary Slip",
-	fields: [
-		"name",
-		"start_date",
-		"end_date",
-		"currency",
-		"gross_pay",
-		"net_pay",
-		"year_to_date",
-	],
+	fields: ["name", "start_date", "end_date", "currency", "gross_pay", "net_pay", "year_to_date"],
 	filters: {
 		employee: employee.data?.name,
 		docstatus: 1,
@@ -115,19 +105,16 @@ const documents = createListResource({
 const lastSalarySlip = computed(() => documents.data?.[0])
 
 function getPeriodLabel(period) {
-	return `${dayjs(period?.start_date).format("MMM YYYY")} - ${dayjs(
-		period?.end_date
-	).format("MMM YYYY")}`
+	return `${dayjs(period?.start_date).format("MMM YYYY")} - ${dayjs(period?.end_date).format(
+		"MMM YYYY"
+	)}`
 }
 
 watch(
 	() => selectedPeriod.value,
 	(value) => {
 		let period = periodsByName.value[value?.value]
-		documents.filters.start_date = [
-			"between",
-			[period?.start_date, period?.end_date],
-		]
+		documents.filters.start_date = ["between", [period?.start_date, period?.end_date]]
 		documents.reload()
 	}
 )

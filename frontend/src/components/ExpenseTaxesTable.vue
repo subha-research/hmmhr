@@ -1,7 +1,7 @@
 <template>
 	<template v-if="expenseClaim.expenses">
 		<div class="flex flex-row justify-between items-center pt-4">
-			<h2 class="text-base font-semibold text-gray-800">{{ __("Taxes & Charges") }} </h2>
+			<h2 class="text-base font-semibold text-gray-800">{{ __("Taxes & Charges") }}</h2>
 			<div class="flex flex-row gap-3 items-center">
 				<span class="text-base font-semibold text-gray-800">
 					{{ formatCurrency(expenseClaim.total_taxes_and_charges, currency) }}
@@ -58,17 +58,13 @@
 		<CustomIonModal :isOpen="isModalOpen" @didDismiss="resetSelectedItem()">
 			<template #actionSheet>
 				<!-- Add Expense Tax Action Sheet -->
-				<div
-					class="bg-white w-full flex flex-col items-center justify-center pb-5"
-				>
+				<div class="bg-white w-full flex flex-col items-center justify-center pb-5">
 					<div class="w-full pt-8 pb-5 border-b text-center">
 						<span class="text-gray-900 font-bold text-xl">
 							{{ modalTitle }}
 						</span>
 					</div>
-					<div
-						class="w-full flex flex-col items-center justify-center gap-5 p-4"
-					>
+					<div class="w-full flex flex-col items-center justify-center gap-5 p-4">
 						<div class="flex flex-col w-full space-y-4">
 							<FormField
 								v-for="field in taxesTableFields.data"
@@ -110,10 +106,7 @@
 								:disabled="addButtonDisabled"
 							>
 								<template #prefix>
-									<FeatherIcon
-										:name="editingIdx === null ? 'plus' : 'check'"
-										class="w-4"
-									/>
+									<FeatherIcon :name="editingIdx === null ? 'plus' : 'check'" class="w-4" />
 								</template>
 								{{ editingIdx === null ? __("Add Tax") : __("Update Tax") }}
 							</Button>
@@ -149,11 +142,7 @@ const props = defineProps({
 		default: false,
 	},
 })
-const emit = defineEmits([
-	"add-expense-tax",
-	"update-expense-tax",
-	"delete-expense-tax",
-])
+const emit = defineEmits(["add-expense-tax", "update-expense-tax", "delete-expense-tax"])
 const __ = inject("$translate")
 const expenseTax = ref({})
 const editingIdx = ref(null)
@@ -199,12 +188,7 @@ const taxesTableFields = createResource({
 						company: props.expenseClaim.company,
 						account_type: [
 							"in",
-							[
-								"Tax",
-								"Chargeable",
-								"Income Account",
-								"Expenses Included In Valuation",
-							],
+							["Tax", "Chargeable", "Income Account", "Expenses Included In Valuation"],
 						],
 					}
 				}
@@ -244,8 +228,7 @@ watch(
 		if (editingIdx.value && newVal && !oldVal) return
 
 		expenseTax.value.tax_amount =
-			parseFloat(props.expenseClaim.total_sanctioned_amount) *
-			(parseFloat(newVal) / 100)
+			parseFloat(props.expenseClaim.total_sanctioned_amount) * (parseFloat(newVal) / 100)
 		calculateTotalTax()
 	}
 )

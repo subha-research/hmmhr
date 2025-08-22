@@ -2,7 +2,6 @@
 # See license.txt
 
 import frappe
-
 import hmmerp
 
 from hmmhr.tests.utils import HRMSTestSuite

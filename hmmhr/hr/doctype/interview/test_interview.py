@@ -9,7 +9,6 @@ from frappe import _
 from frappe.core.doctype.user_permission.test_user_permission import create_user
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, get_datetime, get_time, getdate, nowtime
-
 from hmmerp.setup.doctype.designation.test_designation import create_designation
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 

@@ -3,7 +3,7 @@
 		:isTeamRequest="props.isTeamRequest"
 		:employee="props.doc.employee"
 		:employeeName="props.doc.employee_name"
-		>
+	>
 		<template #left>
 			<AttendanceIcon class="h-5 w-5 text-gray-500" />
 			<div class="flex flex-col items-start gap-1.5">
@@ -14,7 +14,9 @@
 					<span>{{ props.doc.attendance_dates || getDates(props.doc) }}</span>
 					<span v-if="props.doc.to_date">
 						<span class="whitespace-pre"> &middot; </span>
-						<span class="whitespace-nowrap">{{ __("{0}d", [props.doc.total_attendance_days]) }}</span>
+						<span class="whitespace-nowrap">{{
+							__("{0}d", [props.doc.total_attendance_days])
+						}}</span>
 					</span>
 				</div>
 			</div>

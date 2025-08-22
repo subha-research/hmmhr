@@ -43,7 +43,7 @@ const searchText = ref("")
 const value = computed({
 	get: () => props.modelValue,
 	set: (val) => {
-		const newVal = (val && typeof val === "object" && val.value !== undefined) ? val.value : val
+		const newVal = val && typeof val === "object" && val.value !== undefined ? val.value : val
 		emit("update:modelValue", newVal || "")
 	},
 })
@@ -78,13 +78,13 @@ const reloadOptions = (searchTextVal) => {
 }
 
 const handleQueryUpdate = debounce((newQuery) => {
-    const val = newQuery || ""
+	const val = newQuery || ""
 
-    if (val === "" && props.modelValue) return
+	if (val === "" && props.modelValue) return
 
-    if (searchText.value === val) return
-    searchText.value = val
-    reloadOptions(val)
+	if (searchText.value === val) return
+	searchText.value = val
+	reloadOptions(val)
 }, 300)
 
 watch(

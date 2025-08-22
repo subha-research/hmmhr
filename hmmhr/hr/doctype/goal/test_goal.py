@@ -3,7 +3,6 @@
 
 import frappe
 from frappe.tests import IntegrationTestCase
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.appraisal_template.test_appraisal_template import create_kras

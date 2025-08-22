@@ -1,9 +1,10 @@
 [project]
 name = "hmmhr"
 authors = [
-    { name = "Soumen Chowdhury", email = "soumene0008@outlook.com"}
+    { name = "Mithun Kumar Singh", email = "mithun@svasamm.com" },
+    { name = "Soumen Chowdhury", email = "soumene0008@outlook.com" }
 ]
-description = "Hidden Markov Model"
+description = "Open Source HR & Payroll Software based on Frappe HR & Payroll Software"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

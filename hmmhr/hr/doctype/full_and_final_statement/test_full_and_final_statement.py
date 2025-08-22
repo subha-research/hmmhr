@@ -4,7 +4,6 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, today
-
 from hmmerp.assets.doctype.asset.test_asset import create_asset_data
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 from hmmerp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt

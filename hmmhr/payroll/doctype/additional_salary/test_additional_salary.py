@@ -2,10 +2,9 @@
 # See license.txt
 
 import frappe
+import hmmerp
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, add_months, nowdate
-
-import hmmerp
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.payroll.doctype.salary_component.test_salary_component import create_salary_component

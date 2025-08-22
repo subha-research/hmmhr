@@ -19,7 +19,6 @@ from frappe.utils import (
 	getdate,
 	nowdate,
 )
-
 from hmmerp.buying.doctype.supplier_scorecard.supplier_scorecard import daterange
 from hmmerp.setup.doctype.employee.employee import get_holiday_list_for_employee
 

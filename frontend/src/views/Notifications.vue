@@ -7,14 +7,10 @@
 						class="flex flex-row bg-white shadow-sm py-4 px-3 items-center justify-between border-b sticky top-0 z-10"
 					>
 						<div class="flex flex-row items-center">
-							<Button
-								variant="ghost"
-								class="!pl-0 hover:bg-white"
-								@click="router.back()"
-							>
+							<Button variant="ghost" class="!pl-0 hover:bg-white" @click="router.back()">
 								<FeatherIcon name="chevron-left" class="h-5 w-5" />
 							</Button>
-							<h2 class="text-xl font-semibold text-gray-900">{{ __("Notifications") }} </h2>
+							<h2 class="text-xl font-semibold text-gray-900">{{ __("Notifications") }}</h2>
 						</div>
 					</header>
 
@@ -51,10 +47,7 @@
 							</div>
 						</div>
 
-						<div
-							class="flex flex-col bg-white rounded"
-							v-if="notifications.data?.length"
-						>
+						<div class="flex flex-col bg-white rounded" v-if="notifications.data?.length">
 							<router-link
 								:class="[
 									'flex flex-row items-start p-4 justify-between border-b before:mt-3',
@@ -77,18 +70,16 @@
 									</div>
 								</div>
 							</router-link>
-							
 						</div>
 						<div v-if="notifications.data?.length && notifications.hasNextPage" class="flex">
-							<Button
-								variant="outline"
-								class="ml-auto"
-								@click="loadMore"
-							>
-								{{ __('Load more') }}
+							<Button variant="outline" class="ml-auto" @click="loadMore">
+								{{ __("Load more") }}
 							</Button>
 						</div>
-						<EmptyState v-else-if="!notifications.data" :message="__('You have no notifications')" />
+						<EmptyState
+							v-else-if="!notifications.data"
+							:message="__('You have no notifications')"
+						/>
 					</div>
 				</div>
 			</div>
@@ -117,11 +108,8 @@ const __ = inject("$translate")
 const currentStart = ref(0)
 const pageLength = 10
 
-
 const allowPushNotifications = computed(
-	() =>
-		window.frappe?.boot.push_relay_server_url &&
-		arePushNotificationsEnabled.data
+	() => window.frappe?.boot.push_relay_server_url && arePushNotificationsEnabled.data
 )
 
 const markAllAsRead = createResource({
@@ -150,9 +138,7 @@ function getItemRoute(item) {
 }
 
 onMounted(() => {
-	notifications.start = 0,
-	notifications.pageLength = 10,
-	notifications.fetch()
+	;(notifications.start = 0), (notifications.pageLength = 10), notifications.fetch()
 })
 
 function loadMore() {

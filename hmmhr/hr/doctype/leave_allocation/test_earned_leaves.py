@@ -8,7 +8,6 @@ from frappe.utils import (
 	get_year_start,
 	getdate,
 )
-
 from hmmerp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hmmhr.hr.doctype.leave_allocation.test_leave_allocation import create_leave_allocation

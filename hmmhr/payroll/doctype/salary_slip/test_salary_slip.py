@@ -5,6 +5,7 @@ import calendar
 import random
 
 import frappe
+import hmmerp
 from frappe.core.doctype.user_permission.test_user_permission import create_user
 from frappe.model.document import Document
 from frappe.tests import IntegrationTestCase, change_settings
@@ -23,8 +24,6 @@ from frappe.utils import (
 	rounded,
 )
 from frappe.utils.make_random import get_random
-
-import hmmerp
 from hmmerp.accounts.utils import get_fiscal_year
 from hmmerp.setup.doctype.employee.employee import InactiveEmployeeStatusError
 from hmmerp.setup.doctype.employee.test_employee import make_employee

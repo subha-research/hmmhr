@@ -3,10 +3,9 @@
 
 
 import frappe
+import hmmerp
 from frappe import _
 from frappe.utils import flt
-
-import hmmerp
 
 salary_slip = frappe.qb.DocType("Salary Slip")
 salary_detail = frappe.qb.DocType("Salary Detail")

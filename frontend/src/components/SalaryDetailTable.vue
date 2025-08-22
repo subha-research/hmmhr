@@ -8,10 +8,7 @@
 	</div>
 
 	<!-- Table -->
-	<div
-		v-if="items"
-		class="flex flex-col bg-white mt-5 rounded border overflow-auto"
-	>
+	<div v-if="items" class="flex flex-col bg-white mt-5 rounded border overflow-auto">
 		<div
 			class="flex flex-row p-3.5 items-center justify-between border-b"
 			v-for="(item, idx) in items"
@@ -35,7 +32,7 @@
 </template>
 
 <script setup>
-import { computed,inject } from "vue"
+import { computed, inject } from "vue"
 
 import EmptyState from "@/components/EmptyState.vue"
 import { formatCurrency } from "@/utils/formatters"
@@ -58,14 +55,10 @@ const props = defineProps({
 })
 
 const items = computed(() => {
-	return props.type === "Earnings"
-		? props.salarySlip.earnings
-		: props.salarySlip.deductions
+	return props.type === "Earnings" ? props.salarySlip.earnings : props.salarySlip.deductions
 })
 
 const total = computed(() => {
-	return props.type === "Earnings"
-		? props.salarySlip.gross_pay
-		: props.salarySlip.total_deduction
+	return props.type === "Earnings" ? props.salarySlip.gross_pay : props.salarySlip.total_deduction
 })
 </script>

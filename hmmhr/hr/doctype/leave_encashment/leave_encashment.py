@@ -6,7 +6,6 @@ import frappe
 from frappe import _, bold
 from frappe.model.document import Document
 from frappe.utils import flt, format_date, get_link_to_form, getdate
-
 from hmmerp.accounts.general_ledger import make_gl_entries
 from hmmerp.controllers.accounts_controller import AccountsController
 

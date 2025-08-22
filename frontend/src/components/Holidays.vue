@@ -95,9 +95,7 @@ const holidays = createResource({
 })
 
 const upcomingHolidays = computed(() => {
-	const filteredHolidays = holidays.data?.filter(
-		(holiday) => holiday.is_upcoming
-	)
+	const filteredHolidays = holidays.data?.filter((holiday) => holiday.is_upcoming)
 
 	// show only 5 upcoming holidays
 	return filteredHolidays?.slice(0, 5)

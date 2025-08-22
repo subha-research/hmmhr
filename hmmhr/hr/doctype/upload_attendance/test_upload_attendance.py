@@ -2,10 +2,9 @@
 # See license.txt
 
 import frappe
+import hmmerp
 from frappe.tests import IntegrationTestCase
 from frappe.utils import getdate
-
-import hmmerp
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.upload_attendance.upload_attendance import get_data

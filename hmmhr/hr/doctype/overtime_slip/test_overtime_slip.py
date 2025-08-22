@@ -4,7 +4,6 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, flt, getdate, nowdate, today
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.employee_checkin.test_employee_checkin import make_checkin

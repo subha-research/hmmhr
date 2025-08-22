@@ -6,7 +6,6 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import time_diff_in_seconds
-
 from hmmerp.setup.doctype.employee.employee import get_employee_emails
 
 

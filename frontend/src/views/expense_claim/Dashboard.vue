@@ -5,15 +5,8 @@
 				<ExpenseClaimSummary />
 
 				<div class="w-full">
-					<router-link
-						:to="{ name: 'ExpenseClaimFormView' }"
-						v-slot="{ navigate }"
-					>
-						<Button
-							@click="navigate"
-							variant="solid"
-							class="w-full py-5 text-base"
-						>
+					<router-link :to="{ name: 'ExpenseClaimFormView' }" v-slot="{ navigate }">
+						<Button @click="navigate" variant="solid" class="w-full py-5 text-base">
 							{{ __("Claim an Expense") }}
 						</Button>
 					</router-link>

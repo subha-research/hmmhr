@@ -94,9 +94,7 @@ class FrappePushNotification {
 			this.webConfig = response_json.config
 			return this.webConfig
 		} catch (e) {
-			throw new Error(
-				"Push Notification Relay is not configured properly on your site."
-			)
+			throw new Error("Push Notification Relay is not configured properly on your site.")
 		}
 	}
 
@@ -116,9 +114,7 @@ class FrappePushNotification {
 			this.vapidPublicKey = response_json.vapid_public_key
 			return this.vapidPublicKey
 		} catch (e) {
-			throw new Error(
-				"Push Notification Relay is not configured properly on your site."
-			)
+			throw new Error("Push Notification Relay is not configured properly on your site.")
 		}
 	}
 

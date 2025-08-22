@@ -68,18 +68,10 @@
 		<div
 			class="flex w-full flex-row items-center justify-between gap-3 sticky bottom-0 border-t p-4 z[100]"
 		>
-			<Button
-				@click="emit('clear-filters')"
-				variant="outline"
-				class="w-full py-5 text-sm"
-			>
+			<Button @click="emit('clear-filters')" variant="outline" class="w-full py-5 text-sm">
 				{{ __("Clear All") }}
 			</Button>
-			<Button
-				@click="emit('apply-filters')"
-				variant="solid"
-				class="w-full py-5 text-sm"
-			>
+			<Button @click="emit('apply-filters')" variant="solid" class="w-full py-5 text-sm">
 				{{ __("Apply Filters") }}
 			</Button>
 		</div>

@@ -4,7 +4,6 @@
 import frappe
 from frappe.query_builder.functions import Max, Min, Sum
 from frappe.utils import flt
-
 from hmmerp.projects.doctype.project.project import Project
 
 

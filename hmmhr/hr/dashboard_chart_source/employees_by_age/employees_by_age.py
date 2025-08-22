@@ -2,9 +2,8 @@
 # License: GNU General Public License v3. See license.txt
 
 
-from dateutil.relativedelta import relativedelta
-
 import frappe
+from dateutil.relativedelta import relativedelta
 from frappe import _
 from frappe.utils import getdate
 from frappe.utils.dashboard import cache_source

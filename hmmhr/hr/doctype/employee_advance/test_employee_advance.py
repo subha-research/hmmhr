@@ -2,10 +2,9 @@
 # See license.txt
 
 import frappe
+import hmmerp
 from frappe.tests import IntegrationTestCase, change_settings
 from frappe.utils import flt, nowdate
-
-import hmmerp
 from hmmerp.accounts.doctype.account.test_account import create_account
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
