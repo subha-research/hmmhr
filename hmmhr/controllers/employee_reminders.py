@@ -4,7 +4,6 @@
 import frappe
 from frappe import _
 from frappe.utils import add_days, add_months, comma_sep, getdate, today
-
 from hmmerp.setup.doctype.employee.employee import get_all_employee_emails, get_employee_email
 
 from hmmhr.hr.utils import get_holidays_for_employee
@@ -122,7 +121,7 @@ def get_birthday_reminder_text_and_message(birthday_persons):
 	reminder_text = _("Today is {0}'s birthday 🎉").format(birthday_person_text)
 	message = _("A friendly reminder of an important date for our team.")
 	message += "<br>"
-	message += _("Everyone, let’s congratulate {0} on their birthday.").format(birthday_person_text)
+	message += _("Everyone, let's congratulate {0} on their birthday.").format(birthday_person_text)
 
 	return reminder_text, message
 
@@ -215,7 +214,7 @@ def send_work_anniversary_reminders():
 
 	message = _("A friendly reminder of an important date for our team.")
 	message += "<br>"
-	message += _("Everyone, let’s congratulate them on their work anniversary!")
+	message += _("Everyone, let's congratulate them on their work anniversary!")
 
 	for company, anniversary_persons in employees_joined_today.items():
 		employee_emails = get_all_employee_emails(company)

@@ -4,7 +4,6 @@
 
 import frappe
 from frappe import _
-
 from hmmerp.setup.doctype.employee.employee import get_holiday_list_for_employee
 
 

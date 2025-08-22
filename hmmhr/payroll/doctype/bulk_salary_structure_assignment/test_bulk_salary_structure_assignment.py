@@ -4,7 +4,6 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import getdate
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.payroll.doctype.bulk_salary_structure_assignment.bulk_salary_structure_assignment import (

@@ -11,10 +11,7 @@
 			v-for="advance in expenseClaim.advances"
 			:key="advance.name"
 			class="flex flex-col bg-white border shadow-sm rounded p-3.5"
-			:class="[
-				advance.selected ? 'border-gray-500' : '',
-				isReadOnly ? '' : 'cursor-pointer',
-			]"
+			:class="[advance.selected ? 'border-gray-500' : '', isReadOnly ? '' : 'cursor-pointer']"
 			@click="toggleAdvanceSelection(advance)"
 		>
 			<div class="flex flex-row justify-between items-center">
@@ -32,10 +29,12 @@
 						</div>
 						<div class="flex flex-row items-center gap-3 justify-between">
 							<div class="text-xs font-normal text-gray-500">
-								{{ __("{0}: {1}", [
-									__("Unclaimed Amount"),
-									formatCurrency(advance.unclaimed_amount, currency),
-								]) }}
+								{{
+									__("{0}: {1}", [
+										__("Unclaimed Amount"),
+										formatCurrency(advance.unclaimed_amount, currency),
+									])
+								}}
 							</div>
 						</div>
 					</div>

@@ -3,7 +3,6 @@ from datetime import date, datetime, time
 import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import format_datetime
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.shift_type.test_shift_type import setup_shift_type

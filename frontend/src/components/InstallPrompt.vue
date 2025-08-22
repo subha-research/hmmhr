@@ -2,10 +2,10 @@
 	<!-- Install PWA dialog -->
 	<Dialog v-model="showDialog">
 		<template #body-title>
-			<h2 class="text-lg font-bold">{{ __("Install Frappe HR") }} </h2>
+			<h2 class="text-lg font-bold">{{ __("Install Frappe HR") }}</h2>
 		</template>
 		<template #body-content>
-			<p>{{ __("Get the app on your device for easy access & a better experience!") }} </p>
+			<p>{{ __("Get the app on your device for easy access & a better experience!") }}</p>
 		</template>
 		<template #actions>
 			<Button variant="solid" @click="() => install()" class="py-5 w-full">
@@ -21,9 +21,7 @@
 			<div
 				class="mt-[calc(100vh-15rem)] flex flex-col gap-3 mx-2 rounded py-5 bg-blue-100 drop-shadow-xl"
 			>
-				<div
-					class="flex flex-row text-center items-center justify-between mb-1 px-3"
-				>
+				<div class="flex flex-row text-center items-center justify-between mb-1 px-3">
 					<span class="text-base text-gray-900 font-bold">
 						{{ __("Install Frappe HR") }}
 					</span>
@@ -69,8 +67,7 @@ const isIos = () => {
 }
 
 // Detects if device is in standalone mode
-const isInStandaloneMode = () =>
-	"standalone" in window.navigator && window.navigator.standalone
+const isInStandaloneMode = () => "standalone" in window.navigator && window.navigator.standalone
 
 // Checks if should display install popup notification:
 if (isIos() && !isInStandaloneMode()) {

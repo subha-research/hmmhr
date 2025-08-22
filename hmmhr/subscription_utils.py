@@ -1,6 +1,5 @@
-import requests
-
 import frappe
+import requests
 
 STANDARD_ROLES = [
 	# standard roles

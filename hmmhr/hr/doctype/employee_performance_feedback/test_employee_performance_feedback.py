@@ -3,7 +3,6 @@
 
 import frappe
 from frappe.tests import IntegrationTestCase
-
 from hmmerp.setup.doctype.designation.test_designation import create_designation
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 

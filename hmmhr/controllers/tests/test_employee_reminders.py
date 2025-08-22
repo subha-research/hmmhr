@@ -6,7 +6,6 @@ from datetime import timedelta
 import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_months, getdate
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.controllers.employee_reminders import send_holidays_reminder_in_advance

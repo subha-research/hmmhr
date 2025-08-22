@@ -1,9 +1,6 @@
 <template>
 	<div class="w-full">
-		<TabButtons
-			:buttons="TAB_BUTTONS"
-			v-model="activeTab"
-		/>
+		<TabButtons :buttons="TAB_BUTTONS" v-model="activeTab" />
 		<RequestList v-if="activeTab == 'My Requests'" :items="myRequests" />
 		<RequestList
 			v-else-if="activeTab == 'Team Requests'"
@@ -19,7 +16,12 @@ import { ref, inject, onMounted, computed, markRaw } from "vue"
 import TabButtons from "@/components/TabButtons.vue"
 import RequestList from "@/components/RequestList.vue"
 
-import { myAttendanceRequests, myShiftRequests, teamShiftRequests, teamAttendanceRequests } from "@/data/attendance"
+import {
+	myAttendanceRequests,
+	myShiftRequests,
+	teamShiftRequests,
+	teamAttendanceRequests,
+} from "@/data/attendance"
 import { myClaims, teamClaims } from "@/data/claims"
 import { myLeaves, teamLeaves } from "@/data/leaves"
 

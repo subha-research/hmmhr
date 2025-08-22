@@ -12,12 +12,8 @@ const transformLeaveData = (data) => {
 }
 
 export const getLeaveDates = (leave) => {
-	if (leave.from_date == leave.to_date)
-		return dayjs(leave.from_date).format("D MMM")
-	else
-		return `${dayjs(leave.from_date).format("D MMM")} - ${dayjs(
-			leave.to_date
-		).format("D MMM")}`
+	if (leave.from_date == leave.to_date) return dayjs(leave.from_date).format("D MMM")
+	else return `${dayjs(leave.from_date).format("D MMM")} - ${dayjs(leave.to_date).format("D MMM")}`
 }
 
 export const myLeaves = createResource({

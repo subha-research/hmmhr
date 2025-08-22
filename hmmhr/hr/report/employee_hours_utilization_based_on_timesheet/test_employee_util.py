@@ -1,7 +1,6 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils.make_random import get_random
-
 from hmmerp.projects.doctype.project.test_project import make_project
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 

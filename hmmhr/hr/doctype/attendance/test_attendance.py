@@ -16,7 +16,6 @@ from frappe.utils import (
 	getdate,
 	nowdate,
 )
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.attendance.attendance import (

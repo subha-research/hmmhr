@@ -1,5 +1,4 @@
 import frappe
-
 from hmmerp.tests.utils import ERPNextTestSuite
 
 

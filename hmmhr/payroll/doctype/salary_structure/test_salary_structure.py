@@ -2,11 +2,10 @@
 # See license.txt
 
 import frappe
+import hmmerp
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_years, cstr, date_diff, get_first_day, nowdate
 from frappe.utils.make_random import get_random
-
-import hmmerp
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.payroll.doctype.employee_tax_exemption_declaration.test_employee_tax_exemption_declaration import (

@@ -5,7 +5,6 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
-
 from hmmerp.setup.doctype.employee.employee import get_employee_emails
 
 

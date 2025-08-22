@@ -1,13 +1,11 @@
 # Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
-from dateutil.relativedelta import relativedelta
-
 import frappe
+import hmmerp
+from dateutil.relativedelta import relativedelta
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import add_days, add_months, cstr, date_diff, flt
-
-import hmmerp
 from hmmerp.accounts.utils import get_fiscal_year, getdate, nowdate
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 

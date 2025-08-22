@@ -136,7 +136,7 @@ function downloadPDF() {
 	fetch("/api/method/hrms.api._download_pdf", {
 		method: "POST",
 		headers,
-		body: new URLSearchParams({doctype: "Salary Slip" ,docname: salarySlipName }),
+		body: new URLSearchParams({ doctype: "Salary Slip", docname: salarySlipName }),
 		responseType: "blob",
 	})
 		.then((response) => {

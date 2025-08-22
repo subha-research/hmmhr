@@ -13,7 +13,6 @@ from frappe.utils import (
 	getdate,
 	now_datetime,
 )
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 from hmmerp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 

@@ -1,8 +1,5 @@
 <template>
-	<div
-		class="flex flex-col bg-white rounded mt-5 overflow-auto"
-		v-if="props.items?.length"
-	>
+	<div class="flex flex-col bg-white rounded mt-5 overflow-auto" v-if="props.items?.length">
 		<router-link
 			v-for="link in props.items"
 			:key="link.name"
@@ -12,10 +9,7 @@
 			<EmployeeAdvanceItem :doc="link" />
 		</router-link>
 
-		<router-link
-			:to="{ name: 'EmployeeAdvanceFormView' }"
-			v-slot="{ navigate }"
-		>
+		<router-link :to="{ name: 'EmployeeAdvanceFormView' }" v-slot="{ navigate }">
 			<div class="flex flex-col bg-white w-full py-5 px-3.5 mt-0 border-none">
 				<Button @click="navigate" variant="subtle" class="py-5 text-base">
 					{{ __("Request an Advance") }}

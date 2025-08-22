@@ -82,4 +82,3 @@ function validateForm() {
 	shiftAssignment.value.employee = employee.data.name
 }
 </script>
-

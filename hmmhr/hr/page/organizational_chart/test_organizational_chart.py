@@ -3,7 +3,6 @@
 
 import frappe
 from frappe.tests import IntegrationTestCase
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.page.organizational_chart.organizational_chart import get_children

@@ -5,7 +5,6 @@
 import frappe
 from frappe import _
 from frappe.utils import flt
-
 from hmmerp.accounts.report.financial_statements import get_period_list
 
 

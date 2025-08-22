@@ -5,7 +5,6 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import getdate
-
 from hmmerp.accounts.utils import get_fiscal_year
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 

@@ -4,7 +4,6 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, date_diff, get_year_ending, get_year_start, getdate
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 from hmmerp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 

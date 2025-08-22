@@ -4,6 +4,7 @@
 import datetime
 
 import frappe
+import hmmerp
 from frappe import _, qb
 from frappe.model.document import Document
 from frappe.query_builder import Criterion
@@ -23,8 +24,6 @@ from frappe.utils import (
 	getdate,
 	nowdate,
 )
-
-import hmmerp
 from hmmerp import get_company_currency
 from hmmerp.setup.doctype.employee.employee import (
 	InactiveEmployeeStatusError,

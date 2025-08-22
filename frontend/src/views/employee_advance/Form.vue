@@ -41,9 +41,7 @@ const employeeAdvance = ref({
 	department: employee.data.department,
 })
 
-const companyCurrency = computed(() =>
-	getCompanyCurrency(employeeAdvance.value.company)
-)
+const companyCurrency = computed(() => getCompanyCurrency(employeeAdvance.value.company))
 
 // get form fields
 const formFields = createResource({
@@ -130,9 +128,7 @@ function applyFilters(fields) {
 
 function setExchangeRate() {
 	if (!employeeAdvance.value.currency) return
-	const exchange_rate_field = formFields.data?.find(
-		(field) => field.fieldname === "exchange_rate"
-	)
+	const exchange_rate_field = formFields.data?.find((field) => field.fieldname === "exchange_rate")
 
 	if (employeeAdvance.value.currency === companyCurrency.value) {
 		employeeAdvance.value.exchange_rate = 1

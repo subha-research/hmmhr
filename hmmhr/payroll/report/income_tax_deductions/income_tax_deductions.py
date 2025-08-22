@@ -3,10 +3,9 @@
 
 
 import frappe
+import hmmerp
 from frappe import _
 from frappe.query_builder.functions import Extract
-
-import hmmerp
 
 Filters = frappe._dict
 

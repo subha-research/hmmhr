@@ -1,9 +1,7 @@
-from dateutil.relativedelta import relativedelta
-
 import frappe
+from dateutil.relativedelta import relativedelta
 from frappe.tests import IntegrationTestCase
 from frappe.utils import add_days, get_year_ending, get_year_start, getdate
-
 from hmmerp.setup.doctype.employee.test_employee import make_employee
 
 from hmmhr.hr.doctype.attendance.attendance import mark_attendance

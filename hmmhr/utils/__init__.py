@@ -1,8 +1,7 @@
 from collections.abc import Generator
 
-import requests
-
 import frappe
+import requests
 from frappe.utils import add_days, date_diff
 
 country_info = {}

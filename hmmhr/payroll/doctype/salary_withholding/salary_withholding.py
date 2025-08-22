@@ -3,9 +3,8 @@
 
 from datetime import date
 
-from dateutil.relativedelta import relativedelta
-
 import frappe
+from dateutil.relativedelta import relativedelta
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import add_days, add_to_date, cint, get_link_to_form, getdate

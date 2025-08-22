@@ -1,9 +1,6 @@
 <template>
 	<!-- Table -->
-	<div
-		v-if="doc?.expenses"
-		class="flex flex-col bg-white mt-5 rounded border overflow-auto"
-	>
+	<div v-if="doc?.expenses" class="flex flex-col bg-white mt-5 rounded border overflow-auto">
 		<div
 			class="flex flex-row p-3.5 items-center justify-between cursor-pointer"
 			v-for="(item, idx) in doc?.expenses"

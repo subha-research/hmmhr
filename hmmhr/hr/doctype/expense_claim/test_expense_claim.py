@@ -3,7 +3,6 @@
 
 import frappe
 from frappe.utils import flt, nowdate, random_string
-
 from hmmerp.accounts.doctype.account.test_account import create_account
 from hmmerp.accounts.doctype.payment_entry.test_payment_entry import get_payment_entry
 from hmmerp.setup.doctype.employee.test_employee import make_employee

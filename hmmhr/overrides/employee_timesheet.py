@@ -2,7 +2,6 @@
 # License: GNU General Public License v3. See license.txt
 
 from frappe.utils.data import flt
-
 from hmmerp.projects.doctype.timesheet.timesheet import Timesheet
 
 

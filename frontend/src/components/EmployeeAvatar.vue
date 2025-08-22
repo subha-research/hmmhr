@@ -11,12 +11,7 @@
 		</div>
 	</div>
 
-	<Avatar
-		v-else
-		:label="employee?.employee_name"
-		:image="employee?.image"
-		:size="props.size"
-	/>
+	<Avatar v-else :label="employee?.employee_name" :image="employee?.image" :size="props.size" />
 </template>
 
 <script setup>

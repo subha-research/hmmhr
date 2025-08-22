@@ -15,8 +15,6 @@ def execute():
 		)
 
 
-
-
 # import frappe
 
 # def execute():
@@ -27,7 +25,7 @@ def execute():
 #             frappe.reload_doc("hmmhr", "doctype", "shift_assignment")
 #         except:
 #             pass  # Skip if neither module has the doctype
-    
+
 #     if frappe.db.has_column("Shift Assignment", "date"):
 #         frappe.db.sql(
 #             """update `tabShift Assignment`

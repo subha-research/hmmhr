@@ -3,7 +3,6 @@ import { employeeResource } from "./employee"
 
 import dayjs from "@/utils/dayjs"
 
-
 export const getDates = (shift) => {
 	const fromDate = dayjs(shift.from_date).format("D MMM")
 	const toDate = shift.to_date ? dayjs(shift.to_date).format("D MMM") : "Ongoing"
@@ -56,15 +55,15 @@ export const myAttendanceRequests = createResource({
 	cache: "hrms:my_attendance_requests",
 	transform(data) {
 		return transformAttendanceRequests(data)
-	}
+	},
 })
 const transformAttendanceRequests = (data) => {
-		return data.map((request) => {
-			request.doctype = "Attendance Request"
-			request.attendance_dates = getDates(request)
-			request.total_attendance_days = getTotalDays(request)
-			return request
-		})
+	return data.map((request) => {
+		request.doctype = "Attendance Request"
+		request.attendance_dates = getDates(request)
+		request.total_attendance_days = getTotalDays(request)
+		return request
+	})
 }
 export const myShiftRequests = createResource({
 	url: "hrms.api.get_shift_requests",

@@ -5,7 +5,6 @@ import json
 
 import frappe
 from frappe import _
-
 from hmmerp.accounts.doctype.account.account import get_account_currency
 
 

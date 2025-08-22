@@ -5,7 +5,6 @@
 import frappe
 from frappe.model.document import Document
 from frappe.utils import cint, flt, get_link_to_form
-
 from hmmerp import get_default_company
 
 from hmmhr.hr.utils import validate_bulk_tool_fields

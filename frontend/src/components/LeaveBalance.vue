@@ -1,7 +1,7 @@
 <template>
 	<div class="flex flex-col w-full">
 		<div class="flex flex-row justify-between items-center px-4">
-			<div class="text-lg text-gray-800 font-bold">{{ __("Leave Balance") }} </div>
+			<div class="text-lg text-gray-800 font-bold">{{ __("Leave Balance") }}</div>
 			<router-link
 				:to="{ name: 'LeaveApplicationListView' }"
 				v-slot="{ navigate }"
@@ -17,10 +17,7 @@
 		</div>
 
 		<!-- Leave Balance Dashboard -->
-		<div
-			class="flex flex-row gap-4 overflow-x-auto py-2 mt-3"
-			v-if="leaveBalance.data"
-		>
+		<div class="flex flex-row gap-4 overflow-x-auto py-2 mt-3" v-if="leaveBalance.data">
 			<div
 				v-for="(allocation, leave_type, index) in leaveBalance.data"
 				:key="leave_type"

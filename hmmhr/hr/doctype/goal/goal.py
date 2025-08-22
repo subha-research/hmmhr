@@ -1,13 +1,12 @@
 # Copyright (c) 2022, Frappe Technologies Pvt. Ltd. and contributors
 # For license information, please see license.txt
 
-from pypika import CustomFunction
-
 import frappe
 from frappe import _
 from frappe.query_builder.functions import Avg
 from frappe.utils import cint, flt
 from frappe.utils.nestedset import NestedSet
+from pypika import CustomFunction
 
 from hmmhr.hr.doctype.appraisal_cycle.appraisal_cycle import validate_active_appraisal_cycle
 from hmmhr.hr.utils import validate_active_employee
