@@ -14,7 +14,7 @@ on:
     # Run everday at midnight UTC / 5:30 IST
     - cron: "0 0 * * *"
 env:
-    HR_BRANCH: ${{ github.base_ref || github.ref_name }}
+    HMMHR_BRANCH: ${{ github.base_ref || github.ref_name }}
 
 concurrency:
   group: develop-${{ github.event.number }}
@@ -106,11 +106,11 @@ jobs:
 
       - name: Install
         run: |
-          echo "HMMHR_BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}" >> $GITHUB_ENV
           bash ${GITHUB_WORKSPACE}/.github/helper/install.sh
         env:
           FRAPPE_USER: ${{ github.event.inputs.user }}
           FRAPPE_BRANCH: ${{ github.event.inputs.branch }}
+          HMMHR_BRANCH: "deployment"
 
       - name: Run Tests
         # Run tests in parallel
