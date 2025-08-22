@@ -50,7 +50,7 @@ sed -i 's/schedule:/# schedule:/g' Procfile
 sed -i 's/socketio:/# socketio:/g' Procfile
 sed -i 's/redis_socketio:/# redis_socketio:/g' Procfile
 
-bench get-app "https://github.com/${frappeuser}/payments" --branch "$paymentsbranch"
+bench get-app "https://github.com/${subhauser}/payments" --branch "$paymentsbranch"
 bench get-app "https://github.com/${subhauser}/hmmerp" --branch "$hmmerpbranch" --resolve-deps
 # bench get-app "https://github.com/${frappeuser}/lending" --branch "$lendingbranch"
 bench get-app "https://github.com/${subhauser}/hmmhr" --branch "$hmmhrbranch"
