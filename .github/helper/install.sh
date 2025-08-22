@@ -10,7 +10,7 @@ sudo apt install libcups2-dev redis-server mariadb-client libmariadb-dev
 
 pip install frappe-bench
 
-githubbranch=${GITHUB_REF##*/}
+githubbranch=${GITHUB_BASE_REF:-${GITHUB_REF##*/}}
 frappeuser=${FRAPPE_USER:-"frappe"}
 subhauser=${SUBHA_USER:-"subha-research"}
 frappebranch=${FRAPPE_BRANCH:-$githubbranch}
@@ -19,6 +19,8 @@ hmmerpbranch=${HMMERP_BRANCH:-$githubbranch}
 hmmhrbranch=${HMMHR_BRANCH:-$githubbranch}
 paymentsbranch=${PAYMENTS_BRANCH:-${githubbranch%"-hotfix"}}
 lendingbranch="develop"
+
+echo "${frappebranch}", "${hmmerpbranch}", "${hmmhrbranch}", "${paymentsbranch}"
 
 git clone "https://github.com/${frappeuser}/frappe" --branch "${frappebranch}" --depth 1
 bench init --skip-assets --frappe-path ~/frappe --python "$(which python)" frappe-bench

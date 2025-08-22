@@ -106,6 +106,7 @@ jobs:
 
       - name: Install
         run: |
+          echo "HMMHR_BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}" >> $GITHUB_ENV
           bash ${GITHUB_WORKSPACE}/.github/helper/install.sh
         env:
           FRAPPE_USER: ${{ github.event.inputs.user }}
